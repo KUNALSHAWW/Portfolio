@@ -5,50 +5,63 @@ import { motion, AnimatePresence } from "framer-motion";
 const CERTS = {
   tech: [
     {
-      title: "Flipkart Hackathon",
-      org: "Flipkart",
-      date: "2022",
-      img: "/certs/flipkart.jpg",
-      link: "/certs/flipkart.jpg",
-    },
-    {
-      title: "Solution Challenge",
-      org: "Google Developers",
-      date: "2023",
-      img: "/certs/hack2skill.png",
-      link: "/certs/hack2skill.png",
-    },
-    {
-      title: "ADira",
-      org: "SCET AI Club",
+      title: "AWS Cloud Practitioner Essentials",
+      org: "Amazon Web Services",
       date: "2025",
-      img: "/certs/adira.png",
-      link: "/certs/adira.png",
+      img: "/certs/Aws.jpg",
+      link: "/certs/Aws.jpg",
     },
-  ],
-  other: [
     {
-      title: "codathon",
-      org: "SCET tech fest",
+      title: "AI Engineer Agentic Track",
+      org: "Udemy",
       date: "2025",
-      img: "/certs/codathon.png",
-      link: "/certs/codathon.png",
+      img: "/certs/Agentic_Ai.jpg",
+      link: "/certs/Agentic_Ai.jpg",
     },
     {
-      title: "bugbuzz",
-      org: "SCET tech fest",
+      title: "Complete Generative AI Course",
+      org: "KRISHAI (Udemy)",
       date: "2025",
-      img: "/certs/bugbuzz.png",
-      link: "/certs/bugbuzz.png",
+      img: "/certs/genai.jpg",
+      link: "/certs/genai.jpg",
     },
     {
-      title: "Dataloom",
-      org: "SCET",
-      date: "2024",
-      img: "/certs/dataloom.png",
-      link: "/certs/dataloom.png",
+      title: "AI Engineer Core Track: LLM Engineering, RAG, QLORA, Agents",
+      org: "ED Donner (Udemy)",
+      date: "2025",
+      img: "/certs/LLM.jpg",
+      link: "/certs/LLM.jpg",
     },
-  ],
+    {
+      title: "Machine Learning A-Z™: Hands-On Python & R In Data Science",
+      org: "SuperDataScience Team (Udemy)",
+      date: "2025",
+      img: "/certs/ML a-z udemy.jpg",
+      link: "/certs/ML a-z udemy.jpg",
+    },
+    {
+      title: "Young Turks",
+      org: "Naukri.com",
+      date: "2025",
+      img: "/certs/young.jpg",
+      link: "/certs/young.jpg",
+    },
+    {
+      title: "Adobe India Hackathon",
+      org: "Adobe",
+      date: "2025",
+      img: "/certs/adobe.jpg",
+      link: "/certs/adobe.jpg",
+    },
+    {
+      title: "HP Power Lab 2.0",
+      org: "HP",
+      date: "2025",
+      img: "/certs/HP_lab.jpg",
+      link: "/certs/HP_lab.jpg",
+    }
+
+  ]
 };
 
 export default function Certificates() {
@@ -60,10 +73,10 @@ export default function Certificates() {
       <div className="card" style={{ background: "#111", borderRadius: 12, padding: 24 }}>
         <h2 style={{ fontSize: "1.8rem", color: "#fff", marginBottom: 4 }}>Certificates 🏅</h2>
         <p className="lead" style={{ color: "#aaa" }}>
-          Explore my certifications — technical & others.
+          Explore my certifications
         </p>
 
-        {/* Tabs */}
+        {/* Tabs
         <div style={{ display: "flex", gap: 10, marginTop: 16 }}>
           {["tech", "other"].map((t) => (
             <button
@@ -84,7 +97,7 @@ export default function Certificates() {
               {t === "tech" ? "Tech" : "Others"}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Certificates Grid */}
         <div

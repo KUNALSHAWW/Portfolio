@@ -2,13 +2,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 
-import githubLogo from "../../public/github.png";
-import linkedinLogo from "../../public/linkedin.png";
-import gmailLogo from "../../public/gmail.png";
-import whatsappLogo from "../../public/whatsapp.png";
-import instagramLogo from "../../public/insta.png";
-import facebookLogo from "../../public/facebook.png";
-
 import "../CSS/Contact.css"
 import '../index.css' 
 
@@ -67,12 +60,11 @@ export default function Contact() {
   };
 
   const quickLinks = [
-    { img: githubLogo, title: "GitHub", link: "https://github.com/kunj2803" },
-    { img: linkedinLogo, title: "LinkedIn", link: "https://www.linkedin.com/in/kunj-desai-07717b293/" },
-    { img: gmailLogo, title: "Email", link: "mailto:kunjd2803@gmail.com" },
-    { img: whatsappLogo, title: "WhatsApp", link: "https://wa.me/+918758209508" },
-    { img: instagramLogo, title: "Instagram", link: "https://www.instagram.com/kunj_2834/" },
-    { img: facebookLogo, title: "Facebook", link: "https://www.facebook.com/kunj.desai.222608" },
+    { img: "/github.png", title: "GitHub", link: "https://github.com/KUNALSHAWW" },
+    { img: "/linkedin.png", title: "LinkedIn", link: "https://www.linkedin.com/in/kunal-kumar-shaw-443999205/" },
+    { img: "/gmail.png", title: "Email", link: "mailto:kunalshawkol17@gmail.com" },
+    { img: "/whatsapp.png", title: "WhatsApp", link: "https://wa.me/+916290308120" },
+    { img: "/insta.png", title: "Instagram", link: "https://www.instagram.com/kunal_shaw04/" },
   ];
 
   return (
@@ -92,7 +84,9 @@ export default function Contact() {
         transition={{ delay: 0.3, duration: 0.8 }}
         className="contact-subtitle"
       >
-        Whether it’s a new project, a collaboration, or just to say hi — I’d love to hear from you!
+        Whether you have a question, a project idea, or just want to say hello,
+        feel free to reach out! I'm always open to discussing new opportunities,
+        collaborations, or simply connecting with like-minded individuals.
       </motion.p>
 
       {/* Quick Links */}

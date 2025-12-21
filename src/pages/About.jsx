@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaUniversity, FaSchool, FaGraduationCap } from "react-icons/fa";
+import { FaSchool, FaGraduationCap } from "react-icons/fa";
 
 const AboutMe = () => {
   return (
@@ -56,27 +56,54 @@ const AboutMe = () => {
             marginBottom: "1rem",
           }}
         >
-          Hi, I’m <strong>Kunj Desai</strong> — an aspiring{" "}
-          <strong>Artificial Intelligence Engineer</strong> and{" "}
-          <strong>Machine Learning enthusiast</strong> who loves turning ideas
-          into intelligent systems. I’m deeply fascinated by how data and
-          algorithms can shape the future of healthcare, automation, and
-          creativity in technology.
+          I am a Computer Science and Engineering undergraduate at the <strong>Indian Institute of Information Technology (IIIT), Raichur</strong> (Class of 2027), with a cumulative GPA of 8.2/10. My technical philosophy centers on bridging the gap between scalable software architecture and cutting-edge artificial intelligence.
+          
         </p>
 
         <p style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.8)" }}>
-          Beyond code, I enjoy exploring design, experimenting with motion and
-          interaction, and finding ways to blend{" "}
-          <strong>artistic creativity</strong> with{" "}
-          <strong>technical precision</strong>. My goal is to build solutions
-          that not only perform — but also inspire.
-        </p>
+  I specialize in building end-to-end intelligent systems. Unlike traditional developers who stop at application logic, and data scientists who stop at model training, I thrive at the intersection of both:
+</p>
 
-        <p>
-            4th-year B.Tech AI Engineering student with hands-on experience in ML & DL Projects. Proficient in Python, scikitlearn,pytorch,tensorflow and data preprocessing. Seeking internship opportunities to apply skills and contribute to
-            impactful AI solutions.
-        </p>
+<ul
+  style={{
+    fontSize: "1.1rem",
+    color: "rgba(255,255,255,0.8)",
+    paddingLeft: "1.5rem",
+    marginTop: "0.5rem",
+    listStyleType: "disc",
+  }}
+>
+  <li style={{ marginBottom: "0.5rem" }}>
+    <strong>Software Engineering:</strong> I develop scalable applications using
+    Python, JavaScript, React, and Node.js, ensuring robust
+    backend performance with Docker and AWS cloud fundamentals.
+  </li>
+  <li style={{ marginBottom: "0.5rem" }}>
+    <strong>Applied AI & Generative Systems:</strong> I architect
+    production-grade LLM workflows using LangChain, Hugging Face, and RAG
+    (Retrieval-Augmented Generation) pipelines to create
+    context-aware applications.
+  </li>
+  <li style={{ marginBottom: "0.5rem" }}>
+    <strong>Data Intelligence:</strong> I transform raw data into actionable
+    insights using SQL, Pandas, and Tableau, applying
+    statistical rigor to drive business decisions.
+  </li>
+</ul>
 
+<p
+  style={{
+    fontSize: "1.1rem",
+    color: "rgba(255,255,255,0.8)",
+    marginTop: "1rem",
+  }}
+>
+  AI/ML enthusiast with hands-on experience in Machine Learning, Deep Learning,
+  and Full-Stack Development. Proficient in Python, TensorFlow, PyTorch,
+  LangChain, LangGraph, Transformers, LLMs and modern web technologies.
+  Passionate about building intelligent systems and seeking opportunities to
+  contribute to impactful AI solutions.
+</p>
         {/* --- Education Section --- */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -104,7 +131,7 @@ const AboutMe = () => {
               gap: "1.2rem",
             }}
           >
-            {/* --- Education Card 1 --- */}
+            {/* --- Education Card 1: College Section --- */}
             <motion.div
               whileHover={{
                 scale: 1.02,
@@ -122,7 +149,7 @@ const AboutMe = () => {
                 gap: "1.2rem",
               }}
             >
-              <FaUniversity size={40} color="var(--accent)" />
+              <FaGraduationCap size={38} color="var(--accent)" />
               <div>
                 <h4
                   style={{
@@ -131,7 +158,7 @@ const AboutMe = () => {
                     fontSize: "1.25rem",
                   }}
                 >
-                  B.Tech in Artificial Intelligence and Data Science
+                  B.Tech in Computer Science & Engineering
                 </h4>
                 <p
                   style={{
@@ -139,17 +166,16 @@ const AboutMe = () => {
                     marginBottom: "0.2rem",
                   }}
                 >
-                  <strong>S.C.E.T (Sarvajanik University)</strong> — Surat,
-                  Gujarat
+                  <strong>Indian Institute of Information Technology, Raichur</strong> 
                 </p>
+                <p>Raichur, Karnataka</p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>
-                  4th Year (Pursuing) | GPA: 9.0
+                  CGPA - 8.2 / 10
                 </p>
-                <p style={{ color: "rgba(255,255,255,0.7)" }}>2022 – 2026</p>
+                <p style={{ color: "rgba(255,255,255,0.7)" }}>2023-2027</p>
               </div>
             </motion.div>
-
-            {/* --- Education Card 2 --- */}
+            {/* --- Education Card 1: 12th Grade --- */}
             <motion.div
               whileHover={{
                 scale: 1.02,
@@ -184,17 +210,17 @@ const AboutMe = () => {
                     marginBottom: "0.2rem",
                   }}
                 >
-                  <strong>R.S.M. Poonawala Experimental School</strong> — Ambika
-                  Niketan, Surat
+                  <strong>Abhinav Bharati High School</strong> 
                 </p>
+                <p>Kolkata, West Bengal</p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>
-                  Gujarat Board | Percentage: 78%
+                  Percentage: 78%
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>Completed in 2022</p>
               </div>
             </motion.div>
 
-            {/* --- Education Card 3 --- */}
+            {/* --- Education Card 3: 10th Grade --- */}
             <motion.div
               whileHover={{
                 scale: 1.02,
@@ -229,11 +255,10 @@ const AboutMe = () => {
                     marginBottom: "0.2rem",
                   }}
                 >
-                  <strong>R.S.M. Poonawala Experimental School</strong> — Surat,
-                  Gujarat
-                </p>
+                  <strong>Abhinav Bharati High School</strong> 
+                </p> <p>Kolkata, West Bengal</p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>
-                  Gujarat Board | Percentage: 69%
+                  Percentage: 88%
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>Completed in 2020</p>
               </div>
