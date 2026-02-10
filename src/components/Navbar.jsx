@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { label: "Home", to: "/" },
-  { label: "Projects", to: "/projects" },
-  { label: "Skills", to: "/skills" },
-  { label: "Certificates", to: "/certificates" },
-  { label: "Resume", to: "/resume" },
-  { label: "About Me", to: "/about" },
-  { label: "Contact", to: "/contact" },
+  { label: "Home", to: "home" },
+  { label: "Projects", to: "projects" },
+  { label: "Skills", to: "skills" },
+  { label: "Certificates", to: "certificates" },
+  { label: "Resume", to: "resume" },
+  { label: "About Me", to: "about" },
+  { label: "Contact", to: "contact" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showButton, setShowButton] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const navRef = useRef(null);
   const linksRef = useRef(null);
 
@@ -23,6 +23,40 @@ export default function Navbar() {
     if (!navRef.current || !linksRef.current) return;
     setShowButton(linksRef.current.scrollWidth > navRef.current.offsetWidth);
   };
+
+  // Scroll to section smoothly
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navHeight = navRef.current?.offsetHeight || 0;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - navHeight,
+        behavior: "smooth"
+      });
+      setActiveSection(sectionId);
+      setIsOpen(false);
+    }
+  };
+
+  // Track active section on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const navHeight = navRef.current?.offsetHeight || 0;
+      const scrollPosition = window.scrollY + navHeight + 100;
+
+      for (let i = links.length - 1; i >= 0; i--) {
+        const section = document.getElementById(links[i].to);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(links[i].to);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     checkOverflow();
@@ -83,20 +117,23 @@ export default function Navbar() {
             flexGrow: 1,
           }}
         >
-          {links.map((l) => (
-            <NavLink
-              key={l.to}
-              to={l.to}
-              end
-              style={{
-                position: "relative",
-                fontSize: "0.95rem",
-                textDecoration: "none",
-                color: "white",
-                fontWeight: 500,
-              }}
-            >
-              {({ isActive }) => (
+          {links.map((l) => {
+            const isActive = activeSection === l.to;
+            return (
+              <button
+                key={l.to}
+                onClick={() => scrollToSection(l.to)}
+                style={{
+                  position: "relative",
+                  fontSize: "0.95rem",
+                  textDecoration: "none",
+                  color: "white",
+                  fontWeight: 500,
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
                 <motion.div
                   whileHover={{
                     scale: 1.1,
@@ -133,9 +170,9 @@ export default function Navbar() {
                     />
                   )}
                 </motion.div>
-              )}
-            </NavLink>
-          ))}
+              </button>
+            );
+          })}
         </div>
 
         {/* Hamburger */}
@@ -198,22 +235,24 @@ export default function Navbar() {
             </button>
 
             {links.map((l) => (
-              <NavLink
+              <button
                 key={l.to}
-                to={l.to}
-                onClick={() => setIsOpen(false)}
+                onClick={() => scrollToSection(l.to)}
                 style={{
-                  color: "#fff",
+                  color: activeSection === l.to ? "var(--accent)" : "#fff",
                   textDecoration: "none",
                   padding: "1rem 0",
                   width: "100%",
                   textAlign: "center",
                   fontSize: 16,
                   borderBottom: "1px solid rgba(255,255,255,0.05)",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
                 }}
               >
                 {l.label}
-              </NavLink>
+              </button>
             ))}
           </motion.div>
         )}

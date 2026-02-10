@@ -129,7 +129,7 @@ export default function Contact() {
         <input type="text" name="subject" placeholder="Subject" value={form.subject} onChange={handleChange} required />
         <textarea name="message" placeholder="Your Message..." value={form.message} onChange={handleChange} rows="5" required />
         <motion.button type="submit" className="contact-btn" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          🚀 Send Message
+          Send Message
         </motion.button>
 
         {status && <motion.p initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} className="contact-status">{status}</motion.p>}
